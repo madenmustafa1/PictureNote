@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/showNote">
+
+    <fragment
+        android:id="@+id/showNote"
+        android:name="com.mustafamaden.picturenote.showNote"
+        android:label="fragment_show_note"
+        tools:layout="@layout/fragment_show_note" >
+        <action
+            android:id="@+id/action_showNote_to_add_Note"
+            app:destination="@id/add_Note" />
+    </fragment>
+    <fragment
+        android:id="@+id/add_Note"
+        android:name="com.mustafamaden.picturenote.add_Note"
+        android:label="fragment_add__note"
+        tools:layout="@layout/fragment_add__note" >
+        <action
+            android:id="@+id/action_add_Note_to_showNote"
+            app:destination="@id/showNote" />
+        <argument
+            android:name="info"
+            app:argType="string" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+</navigation>
